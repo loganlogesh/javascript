@@ -207,33 +207,3 @@ var pers = 'raj'                      // see below one line code
 console.log("hi frnds i am " + pers + ", i am good in coding" )
 console.log(`hi frnds i am ${pers}, i am good in coding`)   // more efficient code 
 
-// scope --> { one scope } -->        Let - block specified , var - global varible
-
-let names = "logan"  // -->> global variable
-function details(){
-  let names = "raja"
-  if (true){
-    let names = "rama" // --> block specified
-    console.log(`hello ${names}`);
-  }
-  console.log(`hello ${names}`);
-}
-console.log(`hello ${names}`);
-details()
-
-// context with object (this) 
-
-var laptop ={
-  name : "hp",
-  ram : 12,
-  os : "windows",
-  purchase(){
-    console.log(this.os);
-  }
-}
-laptop.purchase()
-function computer(){
-  console.log(this.name);
-}
-computer.call(laptop)
-
