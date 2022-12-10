@@ -1,0 +1,37 @@
+//HTML codes for to-do list
+<h1> Welcome to Owr Website<h1>
+  
+<form id = "myForm">
+  <input id = "myInput" type ="text" autocomplete ="off">
+  <button>Create your Note</button>
+  </form>
+  
+ <h2>creat your creation</h2>
+   
+<ul id = "myList">
+   </ul>
+   
+// javascript codes for to-do list
+
+let myform = document.getElementById("myForm")
+let myinput = document.getElementById("myInput")
+let mylist = document.getElementById("myList")
+
+myForm.addEventListener("submit",
+ (data) => {
+    data.preventDefault()
+    if(myInput.value == ""){
+       alert("Enter the notes in create bar")
+    }
+    else{
+        creatItem(myInput.value) }
+})
+creatItem = (b) =>{
+      let creatdata = `<li>${myInput.value} <button onclick ="deleteItem(this)"> Delete</button></li>`
+      myList.insertAdjacentHTML("beforeend",creatdata)
+      myInput.value = ""
+      myInput.focus()
+}
+function deleteItem(x){
+      x.parentElement.remove()
+}
